@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rawaan Waseem | Developer  &amp;  Builder</title>
+  <meta name="description" content="Portfolio of Rawaan Waseem, Developer  &amp;  Builder. Project showcase and contact details.">
+  <meta property="og:title" content="Rawaan Waseem | Developer  &amp;  Builder">
+  <meta property="og:description" content="Project showcase and contact details.">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Rawaan Waseem" />
+<link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="sections.css">
+  <link rel="stylesheet" href="orbit.css">
+  <link rel="stylesheet" href="comet.css">
+</head>
+
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a class="logo" href="#top" ><img src="logo.png" alt=""></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="halo" aria-hidden="true"></div>
+      <img class="hero-logo" src="logo.png" alt="Your Name logo">
+      <h1 data-kinetic>Building Products backed by a Builder's Mindset, Clean Code and Passion.</h1>
+      <p class="role">Rawaan Waseem  ·  Developer  &amp;  Builder</p>
+      <a class="btn" href="#projects">See my work</a>
+    </section>
+
+    <section id="about" class="block">
+  <h2>About</h2>
+  <div class="about-frame">
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
+
+
+    <p class="about-lead">An engineer rooted in authentic craftmanship, intentional design and purposeful problem-solving.</p>
+    <div class="divider" aria-hidden="true"><span>✦</span></div>
+
+    <div class="about-text">
+      <p>I am a curious human. I break, design, build and delevop systems around me. Experimentation is my passion, but precision is my standard. There is always something to learn from whatever the task might be, be it small or a challenging one. I love challenging myself and trying out diffrent fields of computers and electronics. </p>
+      <p>I understand how to turn an idea into a deployed reality. I approach my work with a builder's discipline. I am self-motivated and adaptable across different tech stacks and am genuinely passionate about creating things that work. </p>
+    </div>
+
+    <dl class="facts">
+      <div><dt>4+</dt><dd>Years building</dd></div>
+      <div><dt>10+</dt><dd>Projects shipped</dd></div>
+      <div><dt>∞</dt><dd>Curiosity</dd></div>
+    </dl>
+
+    <ul class="chips">
+      <li>Lua</li><li>Python</li><li>JavaScript</li>
+      <li>HTML &amp; CSS</li><li>C</li><li>C++</li>
+      <li>Embedded Systems</li>
+    </ul>
+  </div>
+</section>
+
+    <section id="projects" class="block">
+  <h2>Projects</h2>
+  <ul class="cards">
+    <li class="card" style="--c1:#1d2b64; --c2:#0b1020">
+      <div class="card-media">
+  <img src="assets/vbiz-inc.webp" alt="Homepage of the VBiz Inc. website showing the client portfolio and research sections" width="1280" height="800" loading="lazy">
+</div>
+      <div class="card-body">
+        <p class="card-num">01</p>
+        <h3>Client Portfolio  &amp; Research Repository</h3>
+        <p>A centralized research repository webplatform to display client portfolio, publish academic abstracts, documentation, insights and magange professional inquiries. Built with a clean interface for content management and a client handover friendly architecture.</p>
+        <p class="tech">HTML &amp; CSS, Wordpress, Hostinger</p>
+        <div class="card-actions">
+          <a href="https://vbiz-inc.com/">Visit Live website</a>
+        </div>
+      </div>
+    </li>
+    <li class="card" style="--c1:#3a2a6b; --c2:#0b1020">
+      <div class="card-media">
+  <img src="assets/VisionAssistent.png" alt="Output of the Vision Assistant ai model showing objects detected with bounded boxes" width="1280" height="800" loading="lazy">
+</div>
+      <div class="card-body">
+        <p class="card-num">02</p>
+        <h3>Assistive System for Visually Impaired</h3>
+        <p>An Intelligent assistive system for the visually challenged integrating real-time object detection in the environment and distance calculation of the object from the user. Leveraged a text-to-speech (TTS) synthesis engine to convert visual and spatial information gathered from object detection model into spoken audio feedback.</p>
+        <p class="tech">Python, OpenCV, YOLO11, MiDaS, pyttsx3</p>
+        <div class="card-actions">
+          <a href="https://github.com/wRawaan/Interactive-Assistive-System-for-Visually-Impaired-using-YOLO11-and-OpenCv">GitHub</a>
+        </div>
+      </div>
+    </li>
+    <li class="card" style="--c1:#5a4a22; --c2:#0b1020">
+      <div class="card-media">
+  <img src="assets/blockdiagram.png" alt="Block diagram of the Solar-Powered IoT street lights" width="1280" height="800" loading="lazy">
+      </div>
+      <div class="card-body">
+        <p class="card-num">03</p>
+        <h3>Energy Optimization in IOT-based Solar-Powered Streetlights</h3>
+        <p>Designed a power management circuit for solar streetlights and optimized energy consumption implementing softwear-driven algorithms. Deployed a 24-hour weather forecast with an hour look-ahead utilizing OpenWeatherMap API and integrated ThingSpeak Analytics Platform for real-time data logging over cloud.</p>
+        <p class="tech">C++, WiFi.h, HTTPClient.h, Arduino.Json, Math.h, Wire.h, Adafruit_INA219, Adafruit_SDD1306 & GFX, ThingSpeak, OpenWeatherMap API, ESP32</p>
+        <div class="card-actions">
+          <a href="https://github.com/wRawaan/Energy-Optimization-in-IoT-Based-Solar-Streetlights">GitHub</a>
+        </div>
+      </div>
+    </li>
+    <li class="card" style="--c1:#1f4a6b; --c2:#0b1020">
+       <div class="card-media">
+  <img src="assets/minigame.png" alt="A picture of the IDE with a snippet of code displayed" width="1280" height="800" loading="lazy">
+      </div>
+      <div class="card-body">
+        <p class="card-num">04</p>
+        <h3>Game Ui/Ux, Navigation Architecture &amp; Minigame System Design.</h3>
+        <p>Developed a production-ready user interface for game navigation. Designed and deployed responsive user interfaces for title screen, loading states and core game menus integrated with custom fluid animations and visual effects for a Roblox game under development. Programmed two different game loop mechanics for minigames within the game.</p>
+        <p class="tech">Lua, Rojo, TweenService, UserInputService, RunService, CollectionService</p>
+        <div class="card-actions">
+          <a href="https://github.com/wRawaan/Game-Design">GitHub</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="inventory" class="block">
+  <h2>Tech Inventory</h2>
+  <p>The tools I reach for, and how well I know them. Hover a tile for where I've used it.</p>
+  <ul class="legend">
+    <li><span class="st">✦✦✦</span>Daily use</li>
+    <li><span class="st">✦✦<i>✦</i></span>Comfortable</li>
+    <li><span class="st">✦<i>✦✦</i></span>Learning</li>
+  </ul>
+
+  <div class="groups">
+    <div class="group reveal">
+      <h3>Languages</h3>
+      <ul class="tiles">
+        <li class="tile l3" tabindex="0"><b>Lua</b><span class="note">Daily use. Used in Project 04.</span></li>
+        <li class="tile l2" tabindex="0"><b>Python</b><span class="note">Comfortable. Used in Project 02.</span></li>
+        <li class="tile l2" tabindex="0"><b>C++</b><span class="note">Comfortable. Used in Project 03.</span></li>
+        <li class="tile l2" tabindex="0"><b>HTML, CSS &amp; JavaScript</b><span class="note">Comfortable. Used in the current Portfolio and Project 01.</span></li>
+      </ul>
+    </div>
+    <div class="group reveal">
+      <h3>Frameworks</h3>
+      <ul class="tiles">
+        <li class="tile l3" tabindex="0"><b>Arduino Framework</b><span class="note">Daily use. Project 03.</span></li>
+        <li class="tile l2" tabindex="0"><b>PyTorch</b><span class="note">Comfortable. Project 02.</span></li>
+        <li class="tile l1" tabindex="0"><b>Knit</b><span class="note">Learning. Project 04.</span></li>
+        <li class="tile l1" tabindex="0"><b>Hugging Face Transformers</b><span class="note">Learning.</span></li>
+      </ul>
+    </div>
+    <div class="group reveal">
+      <h3>Tools</h3>
+      <ul class="tiles">
+        <li class="tile l3" tabindex="0"><b>ArduinoIDE</b><span class="note">Daily use.</span></li>
+        <li class="tile l3" tabindex="0"><b>VS Code</b><span class="note">Daily use.</span></li>
+        <li class="tile l2" tabindex="0"><b>Figma</b><span class="note">Comfortable. Design mockups.</span></li>
+        <li class="tile l1" tabindex="0"><b>Docker</b><span class="note">Learning.</span></li>
+      </ul>
+    </div>
+    <div class="group reveal">
+      <h3>Concepts</h3>
+      <ul class="tiles">
+        <li class="tile l3" tabindex="0"><b>Embedded systems</b><span class="note">Daily use. Project 03</span></li>
+        <li class="tile l2" tabindex="0"><b>REST APIs</b><span class="note">Comfortable. Project 02.</span></li>
+        <li class="tile l2" tabindex="0"><b>Confidence Thresholding</b><span class="note">Comfortable. Project 02</span></li>
+        <li class="tile l1" tabindex="0"><b>In-Transit &amp; Network Security </b><span class="note">Learning. Project 03</span></li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+<section id="milestones" class="block" data-label="Milestones">
+  <h2>Milestones &amp; Collaborations</h2>
+  <div class="mc-grid">
+    <div>
+      <h3 class="mc-title">Milestones</h3>
+      <ol class="timeline">
+        <li class="reveal"><time>Sep 2026</time><h4>4th International Conference on Intelligent Cyber Physical Systems and Internet of Things (ICoICI 2026)</h4><p> Presented a research paper titled "Designing IoT-Based Solar Powered Street Lights to Optimize Energy Consumption." [To be Published in IEEE explore]</p></li>
+        <li class="reveal"><time>July 2025</time><h4>AI reseach at IIIT Hyderabad with Swecha in collaboration with Meta and TASK </h4><p>Gained hands-on experience in the end-to-end LLM lifecycle, from data preparation to the principles of model fine-tuning and local inference with Ollama.</p></li>
+        <li class="reveal"><time>Oct 2024</time><h4>IoT energy harvesting system</h4><p>>Designed and prototyped my first IoT system using piezoelectric sensors and a power management circuit.</p></li>
+        <li class="reveal"><time>May 2024</time><h4>First project shipped</h4><p>Launched the Reseach repositor and portfolio for a client.</p></li>
+        <li class="reveal"><time>Nov 2023</time><h4>Deployed a chatbot</h4><p>Working in a team of 3 members, we deployed our first chatbot prototype.</p></li>
+      </ol>
+    </div>
+    <div>
+      <h3 class="mc-title">Collaborations</h3>
+      <ul class="collabs">
+        <li class="collab reveal">
+          <p class="who">Arken Saga · Gameplay Mechanics Lead Developer</p>
+          <h4>Modular Weapon framework</h4>
+          <p>Designed a client-server hitbox and projectile system for responsive multiplayer combat.</p>
+        </li>
+         <li class="collab reveal">
+          <p class="who">Arken Saga · Gameplay Mechanics Lead Developer</p>
+          <h4>Custom Movement System</h4>
+          <p>Developed a movement and parkour system with slide, ledge grab, roll, dash, walk and run.</p>
+        </li>
+        <li class="collab reveal">
+          <p class="who">Dough Dealers · Frontend Lead</p>
+          <h4>Game Assets</h4>
+          <p>Ui/Ux design for game navigation, Title screen and Loading Screen</p>
+        </li>
+        <li class="collab reveal">
+          <p class="who">NIETREN · Rigging Artist</p>
+          <h4>Game Asset</h4>
+          <p>Character Rigging for a custom 3D Model.</p>
+        </li>
+         <li class="collab reveal">
+          <p class="who">Untitled RPG · Assistant Scripter</p>
+          <h4>Health System</h4>
+          <p>Designed a health pool and damage mitigation pipeline</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="orbit" class="block" data-label="Out of Orbit">
+  <h2>Out of Orbit</h2>
+  <p>This a fun little corner about me. Just some facts to get to know me better as a person and a small break from all the technical stuff. </p>
+
+  <div class="orbit-top">
+    <div class="reveal">
+      <h3 class="orbit-title">Transmissions</h3>
+      <div class="tx">
+        <ul class="tx-list" aria-live="polite">
+          <li><b>Transmission 01</b>Personally, I love cats. I have a ginger cat named Aslan. He is 4 years old. </li>
+          <li><b>Transmission 02</b>I love to watch, play and build games. I got into gaming eversince I could remember. PS2 generation kid here.</li>
+          <li><b>Transmission 03</b>Do you know when I got into computers? Grade 5. Yes, seriously. Our computer textbook had a picture of an architect using a computer to design blueprints. I decided I want my profession to be on a computer as well.</li>
+          <li><b>Transmission 04</b>I have always been the first to complete any tasks given in my schooling during computer lab. I went around helping other kids in the lab with their tasks. Good old days. Turbo c++, HTML, penguin stock images haha. </li>
+          <li><b>Transmission 05</b>I am weirdly obessed with time-blocking. I get productivity guilt randomly. That persistant friction when resting or taking a break feels stressful rather than relaxing. </li>
+          <li><b>Transmission 06</b>The first thing I ever built? Give it a guess. A small solar-powered toy. Ripped out the motor of a toy car, added a small solar panel from one of my science playkits, assembled it all together and we had a solar powered weird looking robot XD</li>
+          <li><b>Transmission 07</b>Also, I have my own custom-built PC. Do check it out below. </li>
+        </ul>
+        <div class="tx-bar">
+          <span class="tx-count"></span>
+          <button class="tx-btn" type="button">Next transmission</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="orbit-title">Hobbies in orbit</h3>
+      <div class="system">
+        <div class="sun" aria-hidden="true">✦</div>
+        <ul class="ring r1">
+          <li class="arm" style="--a:0deg"><div class="planet" tabindex="0"><span class="pl-in"><span aria-hidden="true">🎮</span><span class="pl-label">Gaming</span></span></div></li>
+          <li class="arm" style="--a:180deg"><div class="planet" tabindex="0"><span class="pl-in"><span aria-hidden="true">✈️</span><span class="pl-label">Travelling</span></span></div></li>
+        </ul>
+        <ul class="ring r2">
+          <li class="arm" style="--a:40deg"><div class="planet" tabindex="0"><span class="pl-in"><span aria-hidden="true">📖</span><span class="pl-label">Reading</span></span></div></li>
+          <li class="arm" style="--a:160deg"><div class="planet" tabindex="0"><span class="pl-in"><span aria-hidden="true">🛼</span><span class="pl-label">Skating</span></span></div></li>
+          <li class="arm" style="--a:280deg"><div class="planet" tabindex="0"><span class="pl-in"><span aria-hidden="true">🔪</span><span class="pl-label">Cooking</span></span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="build reveal">
+    <figure class="shot">
+      <img src="assets/my-pc.png" alt="My custom PC build with AMD Ryzen 7 7700X 8-Core Processor and Gigabyte Geforce RTX 4060 Gaming 8 GB" width="1600" height="1200" loading="lazy"> 
+      <span class="shot-ph">Your build photo</span>
+      <figcaption>Fig. 01 · The build</figcaption>
+    </figure>
+    <div>
+      <h3 class="build-title">The Build</h3>
+      <p class="build-story">I had an old pc which i got curious about and tore open, finding out all the components. I took a deep dive into the world of hardware and the result was this build. </p>
+      <dl class="specs">
+        <div><dt>Processor</dt><dd>AMD Ryzen 7 7700X 8-Core Processor</dd></div>
+        <div><dt>Graphics</dt><dd>Gigabyte Geforce RTX 4060 Gaming 8 GB</dd></div>
+        <div><dt>Memory</dt><dd>32 GB DDR5</dd></div>
+        <div><dt>Storage</dt><dd>1 TB NVMe SSD</dd></div>
+        <div><dt>Motherboard</dt><dd>X670 AORUS ELITE AX</dd></div>
+        <div><dt>Cooling</dt><dd>Cooler Master Liquid cooling</dd></div>
+        <div><dt>Case</dt><dd>Corsair 3500 series</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="comet" class="block" data-label="Comet Run">
+  <h2>Comet Run</h2>
+  <p>Since I love games, my portfolio deserves a game too. A tiny 3D game built with Three.js. Steer with your mouse, finger or arrow keys. Collect the stars and dodge the voids. Enjoy!</p>
+  <div class="demo">
+    <canvas id="comet-canvas" aria-label="Comet Run, a 3D game"></canvas>
+    <div class="comet-hud" aria-hidden="true">
+      <span id="c-score"></span><span id="c-combo"></span><span id="c-time"></span>
+    </div>
+    <button class="demo-start" id="comet-start" type="button">Play Comet Run</button>
+  </div>
+</section>
+
+    <section id="contact" class="block">
+      <h2>Contact</h2>
+      <p>Open to new roles and collaborations. The quickest way to reach me is email.</p>
+      <p class="links">
+        <a href="mailto:rawaanwsm@gmail.com">rawaanwsm@gmail.com</a>
+        <a href="https://github.com/wRawaan">GitHub</a>
+        <!--<a href="https://linkedin.com/in/yourusername">LinkedIn</a>-->
+      </p>
+    </section>
+  </main>
+
+  <footer>
+  <a class="footer-logo" href="#top" aria-label="Back to top"><img src="logo.png" alt=""></a>
+  <p>© <span id="year"></span> Rawaan Waseem</p>
+</footer>
+  <script src="script.js"></script>
+  <script src="cursor.js"></script>
+  <script src="custom-cursor.js"></script>
+  <script src="kinetic.js"></script>
+  <script src="constellation.js"></script>
+  <script src="cards.js"></script>
+  <script src="sections.js"></script>
+  <script src="orbit.js"></script>
+  <script type="module" src="comet.js"></script>
+</body>
+</html>

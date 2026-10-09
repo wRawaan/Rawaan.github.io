@@ -1,0 +1,116 @@
+/* Out of Orbit: fun facts, hobbies, and the custom PC build */
+#orbit.block { max-width: 64rem; }
+
+.orbit-top { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 2.5rem; }
+@media (max-width: 800px) { .orbit-top { grid-template-columns: 1fr; gap: 3rem; } }
+.orbit-title { font-size: 1.4rem; color: var(--halo); margin-bottom: 1.25rem; }
+
+/* ---------- Transmissions (fun facts) ---------- */
+.tx { padding: 1.75rem; border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 255, 255, .03); }
+.tx-list { list-style: none; display: grid; gap: 1.5rem; }
+.tx-list li { font-family: var(--serif); font-size: 1.4rem; line-height: 1.4; color: var(--star); }
+.tx-list li b { display: block; margin-bottom: .35rem; font: 300 .8rem var(--sans); letter-spacing: .14em; color: var(--aura); }
+.tx.is-js .tx-list { min-height: 9rem; display: block; }
+.tx.is-js .tx-list li { display: none; }
+.tx.is-js .tx-list li.active { display: block; animation: tx-in .6s ease both; }
+@keyframes tx-in { from { opacity: 0; transform: translateY(8px); } }
+.tx-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line);
+}
+.tx:not(.is-js) .tx-bar { display: none; }
+.tx-count { font-size: .85rem; letter-spacing: .1em; color: var(--text-dim); }
+.tx-btn {
+  padding: .5rem 1.1rem; border-radius: 999px; font: inherit; font-size: .9rem; cursor: pointer;
+  color: var(--star); background: none; border: 1px solid rgba(232, 217, 168, .45);
+  transition: box-shadow .4s ease, border-color .4s ease, color .4s ease;
+}
+.tx-btn:hover { color: var(--halo); border-color: var(--halo); box-shadow: 0 0 22px rgba(232, 217, 168, .22); }
+
+/* ---------- Hobbies as a small solar system ---------- */
+.system { position: relative; width: min(100%, 380px); aspect-ratio: 1; margin: 0 auto; }
+.sun {
+  position: absolute; inset: 40%; border-radius: 50%; display: grid; place-items: center;
+  font-size: 1.4rem; color: #05070f;
+  background: radial-gradient(circle, #fff6d6, var(--halo) 60%, rgba(232, 217, 168, .3));
+  box-shadow: 0 0 40px rgba(232, 217, 168, .55), 0 0 90px rgba(232, 217, 168, .2);
+}
+.ring {
+  position: absolute; inset: var(--in); list-style: none; border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, .16); animation: orbit-spin var(--t) linear infinite;
+}
+.ring.r1 { --in: 22%; --t: 30s; }
+.ring.r2 { --in: 2%; --t: 50s; animation-direction: reverse; }
+.arm { position: absolute; inset: 0; transform: rotate(var(--a)); }
+.planet {
+  position: absolute; top: 0; left: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px;
+  transform: rotate(calc(var(--a) * -1)); outline: none;
+}
+.pl-in {
+  position: relative; display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%;
+  font-size: 1.25rem; background: #0b1020; border: 1px solid rgba(232, 217, 168, .5);
+  box-shadow: 0 0 16px rgba(232, 217, 168, .18); animation: orbit-spin var(--t) linear infinite reverse;
+  transition: box-shadow .4s ease, border-color .4s ease;
+}
+.ring.r2 .pl-in { animation-direction: normal; }  /* r2 spins the other way, so its counter-spin flips too */
+.pl-label {
+  position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+  white-space: nowrap; font-size: .8rem; color: var(--star); padding: .15rem .65rem;
+  background: #0b1020; border: 1px solid var(--line); border-radius: 999px;
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+/* The rings and arms are full-size invisible boxes. Without this they sit on top of each other
+   and block the mouse from reaching most planets, so only the planets take the pointer. */
+.ring, .arm { pointer-events: none; }
+.planet { pointer-events: auto; }
+/* Lift whichever planet is active above the others so its label is never hidden */
+.ring:has(.planet:hover), .ring:has(.planet:focus-visible) { z-index: 3; }
+.arm:has(.planet:hover), .arm:has(.planet:focus-visible) { z-index: 2; }
+.planet:hover .pl-in, .planet:focus-visible .pl-in { border-color: var(--halo); box-shadow: 0 0 26px rgba(232, 217, 168, .5); }
+.planet:hover .pl-label, .planet:focus-visible .pl-label { opacity: 1; }
+.system:hover .ring, .system:hover .pl-in, .system:focus-within .ring, .system:focus-within .pl-in { animation-play-state: paused; }
+@keyframes orbit-spin { to { transform: rotate(360deg); } }
+
+/* ---------- The Build ---------- */
+.build {
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem; align-items: center; margin-top: 3.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid rgba(232, 217, 168, .22); border-radius: 6px;
+  background: radial-gradient(ellipse at 0% 0%, rgba(159, 180, 255, .1), transparent 55%), rgba(255, 255, 255, .03);
+}
+@media (max-width: 800px) { .build { grid-template-columns: 1fr; } }
+.shot {
+  position: relative; margin: 0; aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden;
+  background: linear-gradient(135deg, #1d2b64, #0b1020);
+}
+.shot > img, .shot-ph { width: 100%; height: 100%; object-fit: cover; display: grid; place-items: center; }
+.shot-ph { color: rgba(232, 217, 168, .6); font-size: 1rem; letter-spacing: .1em; }
+/* Viewfinder corner brackets */
+.shot::before {
+  content: ""; position: absolute; inset: 10px; z-index: 2; pointer-events: none;
+  background:
+    linear-gradient(var(--halo), var(--halo)) 0 0 / 22px 1px no-repeat,
+    linear-gradient(var(--halo), var(--halo)) 0 0 / 1px 22px no-repeat,
+    linear-gradient(var(--halo), var(--halo)) 100% 0 / 22px 1px no-repeat,
+    linear-gradient(var(--halo), var(--halo)) 100% 0 / 1px 22px no-repeat,
+    linear-gradient(var(--halo), var(--halo)) 0 100% / 22px 1px no-repeat,
+    linear-gradient(var(--halo), var(--halo)) 0 100% / 1px 22px no-repeat,
+    linear-gradient(var(--halo), var(--halo)) 100% 100% / 22px 1px no-repeat,
+    linear-gradient(var(--halo), var(--halo)) 100% 100% / 1px 22px no-repeat;
+}
+.shot figcaption {
+  position: absolute; left: 1.4rem; bottom: 1.2rem; z-index: 3; font-size: .78rem; letter-spacing: .12em;
+  color: var(--star); text-shadow: 0 0 10px #000;
+}
+.build-title { font-size: 1.7rem; }
+.build-story { margin-top: .6rem; }
+.specs { margin-top: 1.25rem; }
+.specs div { display: flex; justify-content: space-between; gap: 1rem; padding: .65rem 0; border-bottom: 1px solid var(--line); transition: border-color .4s ease; }
+.specs dt { font-size: .85rem; color: var(--text-dim); }
+.specs dd { margin: 0; text-align: right; font-size: .95rem; color: var(--star); transition: color .4s ease; }
+.specs div:hover { border-color: rgba(232, 217, 168, .5); }
+.specs div:hover dd { color: var(--halo); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ring, .pl-in, .tx.is-js .tx-list li.active { animation: none !important; }
+  .ring { transform: none; }
+}
