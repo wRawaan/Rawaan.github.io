@@ -118,6 +118,8 @@ h3 { font-family: var(--serif); font-weight: 400; font-size: 1.7rem; color: var(
 
 /* Contact */
 .links { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-top: 1.5rem; }
+.links a { display: inline-flex; align-items: center; gap: .5rem; }
+.links .ico { width: 1.15em; height: 1.15em; fill: currentColor; flex: none; }
 footer { text-align: center; padding: 3rem 1rem; font-size: .85rem; border-top: 1px solid var(--line); }
 footer { display: flex; flex-direction: column; align-items: center; gap: .9rem; }
 .footer-logo img {
