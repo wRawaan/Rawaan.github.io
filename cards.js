@@ -2,6 +2,43 @@
 (() => {
   const cards = [...document.querySelectorAll(".card")];
   if (!cards.length) return;
+  // ---- Product videos: play on hover (or focus), pause on leave ----
+  // Videos load lazily: data-src is only turned into src when a card is near the screen.
+  const videos = [...document.querySelectorAll(".card video")];
+  if (videos.length) {
+    const canHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const load = (v) => {
+      if (!v.getAttribute("src") && v.dataset.src) { v.preload = "auto"; v.src = v.dataset.src; }
+    };
+    const play = (v) => { load(v); const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    // load() resets the video, which brings the poster image back
+    const stop = (v) => { v.pause(); if (v.getAttribute("src")) v.load(); };
+
+    const near = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { load(e.target); near.unobserve(e.target); }
+    }, { rootMargin: "400px" });
+    videos.forEach((v) => near.observe(v));
+
+    if (canHover) {
+      for (const card of document.querySelectorAll(".card")) {
+        const v = card.querySelector("video");
+        if (!v) continue;
+        card.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") play(v); });
+        card.addEventListener("pointerleave", () => stop(v));
+        card.addEventListener("focusin", () => play(v));
+        card.addEventListener("focusout", () => stop(v));
+      }
+    } else if (!reduce) {
+      // Touch screens can't hover, so play whichever card is mostly in view
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) e.isIntersecting ? play(e.target) : stop(e.target);
+      }, { threshold: 0.6 });
+      videos.forEach((v) => io.observe(v));
+    }
+  }
+
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
