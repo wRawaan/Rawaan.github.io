@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Projects | Your Name</title>
+  <meta name="description" content="Every project by Rawaan Waseem, with short previews, tech used and links.">
+  <meta property="og:title" content="All Projects | Rawaan Waseem">
+  <meta property="og:description" content="Every project by Rawaan Waseem.">
+
+  <!-- Favicon: copy the exact favicon lines from your index.html if they differ from these -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cards.css">
+  <style>
+    .page-head { max-width: 64rem; margin: 0 auto; padding: 5rem 1.5rem 0; }
+    .page-head h1 { animation: none; }
+    .page-head p { max-width: 42rem; margin-top: 1rem; }
+    .back { display: inline-block; margin-bottom: 2rem; font-size: .9rem; }
+    #projects.block { padding-top: 2rem; }
+  </style>
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a class="logo" href="index.html" ><img src="logo.png" alt=""></a>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="page-head">
+      <a class="back" href="index.html#projects">&larr; Back to home</a>
+      <h1 data-kinetic>All Projects</h1>
+      <p>Everything I've built, from client websites to personal experiments. Hover a card to see it in action.</p>
+    </div>
+
+    <section id="projects" class="block">
+      <ul class="cards">
+
+        <li class="card" style="--c1:#1d2b64; --c2:#0b1020">
+          <div class="card-media">
+            <video data-src="assets/project-one.mp4" poster="assets/project-one.png"
+                   muted loop playsinline preload="none"
+                   aria-label="Short silent preview of the Client Portfolio and Research Repository website"></video>
+          </div>
+          <div class="card-body">
+            <p class="card-num">01</p>
+            <h3>Client Portfolio &amp; Research Repository</h3>
+            <p>A centralized research repository web platform to display client portfolio, publish academic abstracts and manage professional inquiries. Built with a clean interface for content management and a client-handover-friendly architecture.</p>
+            <p class="tech">HTML &amp; CSS, WordPress, Hostinger</p>
+            <div class="card-actions">
+              <a href="https://vbiz-inc.com/">Visit live website</a>
+            </div>
+          </div>
+        </li>
+
+  <li class="card" style="--c1:#3a2a6b; --c2:#0b1020">
+      <div class="card-media">
+  <video data-src="assets/project-two.mp4" poster="assets/project-two.png"
+         muted loop playsinline preload="none"
+         aria-label="Short silent preview of the Project two"></video>
+</div>
+      <div class="card-body">
+        <p class="card-num">02</p>
+        <h3>Assistive System for Visually Impaired</h3>
+        <p>An Intelligent assistive system for the visually challenged integrating real-time object detection in the environment and distance calculation of the object from the user. Leveraged a text-to-speech (TTS) synthesis engine to convert visual and spatial information gathered from object detection model into spoken audio feedback.</p>
+        <p class="tech">Python, OpenCV, YOLO11, MiDaS, pyttsx3</p>
+        <div class="card-actions">
+          <a href="https://github.com/wRawaan/Interactive-Assistive-System-for-Visually-Impaired-using-YOLO11-and-OpenCv">GitHub</a>
+        </div>
+      </div>
+    </li>
+    <li class="card" style="--c1:#5a4a22; --c2:#0b1020">
+       <div class="card-media">
+  <video data-src="assets/project-three.mp4" poster="assets/project-three.png"
+         muted loop playsinline preload="none"
+         aria-label="Short silent preview of the Project three"></video>
+</div>
+      <div class="card-body">
+        <p class="card-num">03</p>
+        <h3>Energy Optimization in IOT-based Solar-Powered Streetlights</h3>
+        <p>Designed a power management circuit for solar streetlights and optimized energy consumption by implementing software-driven algorithms. Deployed a 24-hour weather forecast with an hour look-ahead utilizing OpenWeatherMap API and integrated ThingSpeak Analytics Platform for real-time data logging over cloud.</p>
+        <p class="tech">C++, WiFi.h, HTTPClient.h, Arduino.Json, Math.h, Wire.h, Adafruit_INA219, Adafruit_SSD1306 & GFX, ThingSpeak, OpenWeatherMap API, ESP32</p>
+        <div class="card-actions">
+          <a href="https://github.com/wRawaan/Energy-Optimization-in-IoT-Based-Solar-Streetlights">GitHub</a>
+        </div>
+      </div>
+    </li>
+    <li class="card" style="--c1:#1f4a6b; --c2:#0b1020">
+      <div class="card-media">
+  <video data-src="assets/project-four.mp4" poster="assets/minigame.png"
+         muted loop playsinline preload="none"
+         aria-label="Short silent preview of the Project three"></video>
+</div>
+      <div class="card-body">
+        <p class="card-num">04</p>
+        <h3>Game Ui/Ux, Navigation Architecture &amp; Minigame System Design.</h3>
+        <p>Developed a production-ready user interface for game navigation. Designed and deployed responsive user interfaces for title screen, loading states and core game menus integrated with custom fluid animations and visual effects for a Roblox game under development. Programmed two different game loop mechanics for minigames within the game.</p>
+        <p class="tech">Lua, Rojo, TweenService, UserInputService, RunService, CollectionService</p>
+        <div class="card-actions">
+          <a href="https://github.com/wRawaan/Game-Design">GitHub</a>
+        </div>
+      </div>
+    </li>
+
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-logo" href="index.html" aria-label="Back to home"><img src="logo.png" alt=""></a>
+    <p>© <span id="year"></span> Rawaan Waseem</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="cursor.js"></script>
+  <script src="custom-cursor.js"></script>
+  <script src="kinetic.js"></script>
+  <script src="cards.js"></script>
+</body>
+</html>
