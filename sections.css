@@ -1,0 +1,89 @@
+/* Tech Inventory + Milestones & Collaborations */
+#inventory.block, #milestones.block { max-width: 64rem; }
+
+/* ---------- Tech Inventory ---------- */
+.legend {
+  display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; list-style: none;
+  margin: 1.25rem 0 2rem; font-size: .85rem;
+}
+.legend .st { color: var(--halo); letter-spacing: .15em; margin-right: .5rem; }
+.legend .st i { font-style: normal; color: rgba(255, 255, 255, .22); }
+
+.groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+@media (max-width: 800px) { .groups { grid-template-columns: 1fr; } }
+.group {
+  padding: 1.5rem; border: 1px solid var(--line); border-radius: 14px;
+  background: rgba(255, 255, 255, .025);
+}
+.group h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--halo); }
+
+.tiles { list-style: none; display: grid; gap: .65rem; grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); }
+.tile {
+  position: relative; padding: .7rem .9rem .8rem; outline: none;
+  border: 1px solid var(--line); border-radius: 10px; background: rgba(5, 7, 15, .35);
+  transition: border-color .4s ease, box-shadow .4s ease, transform .4s ease;
+}
+.tile b { display: block; font-weight: 400; font-size: .95rem; color: var(--star); }
+/* Three diamonds; the first 1, 2 or 3 are gold depending on level */
+.tile::after {
+  content: "✦✦✦"; display: inline-block; margin-top: .3rem; font-size: .6rem; letter-spacing: .25em;
+  background: linear-gradient(90deg, var(--halo) var(--p, 100%), rgba(255, 255, 255, .22) var(--p, 100%));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tile.l1 { --p: 33.3%; }
+.tile.l2 { --p: 66.6%; }
+.tile.l3 { --p: 100%; }
+.tile:hover, .tile:focus-visible {
+  border-color: rgba(232, 217, 168, .6); box-shadow: 0 0 22px rgba(232, 217, 168, .16); transform: translateY(-2px);
+}
+.note {
+  position: absolute; z-index: 5; left: 50%; bottom: calc(100% + 10px);
+  transform: translate(-50%, 4px); width: max-content; max-width: 14rem;
+  padding: .55rem .75rem; border: 1px solid rgba(232, 217, 168, .4); border-radius: 8px;
+  background: #0b1020; font-size: .78rem; line-height: 1.5; color: var(--text-dim);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease, transform .3s ease;
+}
+.tile:hover .note, .tile:focus-visible .note { opacity: 1; transform: translate(-50%, 0); }
+@media (max-width: 720px) {
+  .note { left: 0; transform: translateY(4px); }
+  .tile:hover .note, .tile:focus-visible .note { transform: none; }
+}
+
+/* ---------- Milestones & Collaborations ---------- */
+.mc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 2.5rem; }
+@media (max-width: 800px) { .mc-grid { grid-template-columns: 1fr; gap: 3rem; } }
+.mc-title { font-size: 1.4rem; color: var(--halo); margin-bottom: 1.5rem; }
+.timeline h4, .collab h4 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; line-height: 1.25; color: var(--star); }
+
+/* Timeline: a constellation line with a diamond for each milestone */
+.timeline { list-style: none; padding-left: 1.75rem; border-left: 1px solid rgba(232, 217, 168, .3); }
+.timeline li { position: relative; padding-bottom: 2rem; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+  content: ""; position: absolute; left: calc(-1.75rem - 5px); top: .4rem; width: 9px; height: 9px;
+  background: var(--bg-deep); border: 1px solid var(--halo); transform: rotate(45deg);
+  transition: background .4s ease, box-shadow .4s ease;
+}
+.timeline li:hover::before { background: var(--halo); box-shadow: 0 0 14px rgba(232, 217, 168, .8); }
+.timeline time { display: block; font-size: .8rem; letter-spacing: .14em; color: var(--halo); margin-bottom: .2rem; }
+.timeline p { margin-top: .35rem; }
+
+/* Collaborations: small glass cards */
+.collabs { list-style: none; display: grid; gap: 1rem; }
+.collab {
+  padding: 1.25rem 1.4rem; border: 1px solid var(--line); border-radius: 12px;
+  background: rgba(255, 255, 255, .03);
+  transition: border-color .4s ease, box-shadow .4s ease, transform .4s ease;
+}
+.collab:hover { border-color: rgba(159, 180, 255, .5); box-shadow: 0 0 36px rgba(159, 180, 255, .12); transform: translateY(-2px); }
+.collab .who { font-size: .8rem; letter-spacing: .06em; color: var(--aura); margin-bottom: .25rem; }
+.collab p { margin-top: .35rem; }
+.collab a { display: inline-block; margin-top: .6rem; font-size: .9rem; }
+
+/* Gentle reveal on scroll (only active when sections.js adds .js) */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; transition-delay: calc(var(--d, 0) * 90ms); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tile, .note, .collab, .timeline li::before { transition: none; }
+}

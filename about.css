@@ -1,0 +1,88 @@
+/* About: a framed celestial panel with a travelling light, pull quote, facts and chips */
+#about.block { max-width: 56rem; }
+
+@property --a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+
+.about-frame {
+  position: relative; margin-top: 2rem; overflow: hidden;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border: 1px solid rgba(232, 217, 168, .22); border-radius: 6px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(232, 217, 168, .09), transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(159, 180, 255, .08), transparent 50%),
+    rgba(255, 255, 255, .03);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 70px rgba(159, 180, 255, .08), inset 0 0 50px rgba(232, 217, 168, .03);
+}
+/* Thin inner frame */
+.about-frame::before {
+  content: ""; position: absolute; inset: 8px; pointer-events: none;
+  border: 1px solid var(--line); border-radius: 3px;
+}
+/* A point of light that circles the border */
+.about-frame::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: conic-gradient(from var(--a), transparent 0 78%, rgba(232, 217, 168, .95) 90%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: about-orbit 9s linear infinite;
+}
+@keyframes about-orbit { to { --a: 360deg; } }
+
+/* Diamond ornaments on the corners (kept inside the clipped frame) */
+.corner {
+  position: absolute; width: 9px; height: 9px; background: var(--halo); z-index: 1;
+  transform: translate(-50%, -50%) rotate(45deg); box-shadow: 0 0 12px rgba(232, 217, 168, .8);
+}
+.corner.tl { top: 0; left: 0; }
+.corner.tr { top: 0; left: 100%; }
+.corner.bl { top: 100%; left: 0; }
+.corner.br { top: 100%; left: 100%; }
+
+/* Pull quote and ornament divider */
+.about-lead {
+  position: relative; max-width: 34rem;
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: clamp(1.5rem, 3.4vw, 2.25rem); line-height: 1.3; color: var(--star);
+  text-shadow: 0 0 30px rgba(232, 217, 168, .25);
+}
+.divider { display: flex; align-items: center; gap: 1rem; margin: 1.75rem 0; color: var(--halo); }
+.divider::before, .divider::after {
+  content: ""; flex: 1; height: 1px;
+  background: linear-gradient(90deg, rgba(232, 217, 168, .5), transparent);
+}
+.divider::before { background: linear-gradient(270deg, rgba(232, 217, 168, .5), transparent); }
+
+.about-text { max-width: 40rem; }
+.about-text p { margin: 0; }
+.about-text p + p { margin-top: 1.1rem; }
+
+/* Justified text. Hyphenation keeps word gaps even, and phones stay left-aligned. */
+@media (min-width: 701px) {
+  .about-text p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+}
+
+/* Quick facts */
+.facts {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  margin-top: 2.25rem; padding-top: 1.75rem; border-top: 1px solid var(--line);
+}
+.facts dt {
+  font-family: var(--serif); font-weight: 300; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1;
+  color: var(--halo); text-shadow: 0 0 24px rgba(232, 217, 168, .35);
+}
+.facts dd { margin: .45rem 0 0; font-size: .85rem; color: var(--text-dim); }
+
+.chips li.learning { border-style: dashed; color: var(--aura); }
+.chips li.learning::before { content: ""; color: var(--halo); }
+
+/* Skill chips */
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.75rem; }
+.chips li {
+  padding: .3rem .85rem; font-size: .85rem; color: var(--text-dim);
+  border: 1px solid var(--line); border-radius: 999px;
+  transition: border-color .4s ease, color .4s ease, box-shadow .4s ease;
+}
+.chips li:hover { border-color: var(--halo); color: var(--halo); box-shadow: 0 0 18px rgba(232, 217, 168, .2); }
+
+@media (prefers-reduced-motion: reduce) { .about-frame::after { animation: none; } }

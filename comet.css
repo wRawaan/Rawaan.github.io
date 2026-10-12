@@ -1,0 +1,37 @@
+/* Comet Run: 3D game section */
+#comet.block { max-width: 64rem; }
+
+#comet .demo {
+  position: relative; margin-top: 2rem; aspect-ratio: 16 / 10;
+  border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--bg-deep);
+  box-shadow: 0 0 60px rgba(159, 180, 255, .12);
+}
+#comet canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+#comet .demo-start {
+  position: absolute; inset: 0; width: 100%; padding: 1rem;
+  background: rgba(5, 7, 15, .7); color: var(--star); border: 0;
+  font: inherit; font-size: 1.1rem; letter-spacing: .06em; cursor: pointer;
+  transition: background .5s ease, color .5s ease;
+}
+#comet .demo-start:hover { background: rgba(5, 7, 15, .5); color: var(--halo); }
+
+.comet-hud {
+  position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: space-between;
+  padding: 1rem 1.25rem; pointer-events: none; font-size: 1.1rem; font-weight: 300;
+  color: var(--star); text-shadow: 0 0 12px rgba(0, 0, 0, .8);
+  opacity: 0; transition: opacity .4s ease, color .2s ease;
+}
+.comet-hud span { flex: 1; }
+.comet-hud span:nth-child(2) { text-align: center; color: var(--halo); }
+.comet-hud span:last-child { text-align: right; }
+.demo.playing .comet-hud { opacity: 1; }
+.comet-hud.hit { color: #ff9fb4; }
+
+/* Lives */
+.comet-lives {
+  position: absolute; left: 1.25rem; bottom: 1rem; display: flex; gap: .4rem; pointer-events: none;
+  font-size: 1.3rem; opacity: 0; transition: opacity .4s ease;
+}
+.comet-lives span { color: var(--halo); text-shadow: 0 0 12px rgba(232, 217, 168, .7); transition: color .3s ease, transform .3s ease; }
+.comet-lives .lost { color: rgba(255, 255, 255, .2); text-shadow: none; transform: scale(.75); }
+.demo.playing .comet-lives { opacity: 1; }
